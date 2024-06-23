@@ -3,97 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gotazil - Alívio Imediato da Azia e Refluxo</title>
+    <title>Gotazil - Alívio Eficaz da Azia e Refluxo</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <style>
         body {
             font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .header {
+            background-color: #000;
+            padding: 10px 0;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .header img {
+            max-height: 60px;
         }
         .hero {
-            background: url('images/hero-bg.jpg') no-repeat center center/cover;
-            color: white;
-            padding: 60px 0;
+            background: url('https://gotazil.com.br/wp-content/uploads/2023/09/CAPA1-PV-min.png') no-repeat center center/cover;
+            color: #00373A;
+            padding: 40px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            position: relative;
+        }
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 0;
+        }
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
         .cta-btn {
-            background-color: #28a745;
+            background-color: #6EC1E4;
             color: white;
             padding: 15px 30px;
             border: none;
             border-radius: 5px;
             font-size: 1.2em;
+            transition: background-color 0.3s;
+        }
+        .cta-btn:hover {
+            background-color: #61CE70;
+        }
+        .features {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+        .features i {
+            font-size: 2em;
+            color: #6EC1E4;
+            margin-bottom: 15px;
         }
         .testimonial {
-            background-color: #f9f9f9;
+            background-color: #fff;
             padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            height: 100%;
+        }
+        .testimonial p {
+            font-style: italic;
+        }
+        .testimonial strong {
+            display: block;
+            margin-top: 10px;
+        }
+        .benefits {
+            padding: 60px 0;
+            background-color: #f8f9fa;
+        }
+        .benefits img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .guarantee {
+            background-color: #61CE70;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .guarantee img {
+            max-width: 100%;
             border-radius: 10px;
         }
         .footer {
-            background-color: #343a40;
+            background-color: #54595F;
             color: white;
             padding: 20px 0;
+            text-align: center;
         }
+        .info-links {
+            margin-top: 20px;
+        }
+        .info-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        .info-links a:hover {
+            text-decoration: underline;
+        }
+        .title {
+            font-size: 2em;
+            color: #00373A;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+        .subtitle {
+            font-size: 1.5em;
+            color: #7A7A7A;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+            margin-bottom: 15px;
+        }
+        .section-btn {
+            margin-top: 20px;
+        }
+        /* Links: Remove underline on hover */
+a {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+
+/* Icons: Add pointer cursor */
+.cta-btn:hover {
+    cursor: pointer;
+}
+
+/* Title and Subtitle Styling */
+.title {
+    font-size: 2.5em;
+    color: #085D63;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+.subtitle {
+    font-size: 1.5em;
+    color: #7A7A7A;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 15px;
+}
+
+/* Button Styling */
+.cta-btn {
+    background-color: #6EC1E4;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+.cta-btn:hover {
+    background-color: #61CE70;
+    transform: scale(1.05);
+}
+
+
+
+
+/* Features Section: Ensure same height for all cards and add hover effects */
+.features .col-md-4 div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+.features .col-md-4 div:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.features i {
+    transition: transform 0.3s;
+}
+.features .col-md-4 div:hover i {
+    transform: rotate(10deg);
+}
+.features .subtitle {
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 10px;
+}
+.features p {
+    color: #ffffff;
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+
+/* Benefits Section: Ensure same height for all cards and add hover effects */
+.benefits .col-md-6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.benefits ul {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #085D63;
+}
+.benefits ul li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.benefits ul li i {
+    color: #6EC1E4;
+    margin-right: 10px;
+}
+.benefits h2.title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #00373A;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+}
+.benefits .col-md-6 img {
+    width: auto;
+    height: 400px;
+    border-radius: 10px;
+    /* box-shadow: 0 4px 8px rgba(0,0,0,0.1); */
+}
+
+/* Guarantee Section: Ensure the styling is visually appealing */
+.guarantee {
+    background-color: #085D63;
+    padding: 60px 0;
+}
+.guarantee .title {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    margin-bottom: 20px;
+}
+.guarantee .subtitle {
+    font-size: 1.5em;
+    color: #ffffff;
+    margin-bottom: 30px;
+}
+.guarantee img {
+    max-height: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+.guarantee .cta-btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: 1.5em;
+    color: #085D63;
+    background-color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+.guarantee .cta-btn:hover {
+    background-color: #61CE70;
+    transform: scale(1.05);
+}
+.guarantee .cta-btn i {
+    margin-right: 10px;
+}
+
+
     </style>
 </head>
 <body>
 
-    <header class="hero text-center">
-        <div class="container">
-            <h1>Liberte-se da Azia e Refluxo com Gotazil!</h1>
-            <p>Descubra o alívio imediato e duradouro que milhões de brasileiros estão experimentando.</p>
-            <a href="#comprar" class="cta-btn">Compre Agora</a>
-        </div>
+    <header class="header" style="background-color: #00373A; padding: 20px 0; text-align: center; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <img src="https://gotazil.com.br/wp-content/uploads/2023/09/LOGO1-1.svg" alt="Gotazil Logo" style="max-height: 60px;">
     </header>
+    
+    
 
-    <section class="container my-5">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Por que Gotazil?</h2>
-                <p>Você está cansado de acordar à noite com aquela queimação insuportável? Gotazil é o suplemento natural que ataca a raiz do problema, proporcionando alívio imediato.</p>
-                <ul>
-                    <li>Alívio imediato da azia</li>
-                    <li>Melhora da digestão</li>
-                    <li>Fórmula 100% natural e aprovada pela ANVISA</li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <img src="images/product.jpg" alt="Gotazil" class="img-fluid">
-            </div>
-        </div>
-    </section>
-
-    <section class="container my-5">
-        <h2>Depoimentos de Clientes</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="testimonial">
-                    <p>"Desde que comecei a usar Gotazil, minha vida mudou. Nunca mais tive aquelas crises terríveis."</p>
-                    <p><strong>Márcia, 34 anos</strong></p>
+    <section class="hero text-center" style="background: url('https://gotazil.com.br/wp-content/uploads/2023/09/CAPA1-PV-min.png') no-repeat center center/cover; padding: 10px 0; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 0;"></div>
+        <div class="container" style="position: relative; z-index: 1; color: #ffffff;">
+            <div class="row">
+                <div class="col-4 col-md-2 mx-auto mb-2">
+                    <img src="https://gotazil.com.br/wp-content/uploads/2023/09/CAPA-min-2-509x1024.png" alt="Gotazil" class="img-fluid rounded mt-4">
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="testimonial">
-                    <p>"Investi em Gotazil e não me arrependo. Melhoria significativa em poucos dias."</p>
-                    <p><strong>Renato J.</strong></p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="testimonial">
-                    <p>"Melhor tratamento natural que já usei para refluxo. Recomendo a todos."</p>
-                    <p><strong>Meire Pereira</strong></p>
+                <div class="col-10 col-md-6 mx-auto my-auto">
+                    <div class="row">
+                        <div class="mb-1">
+                            <h2 class="title" style="font-size: 2.5em; font-weight: bold; color: #ffffff; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Sofre com algum desses problemas?</h2>
+                            <ul class="list-unstyled" style="font-size: 1.2em; line-height: 1.6; color: #ffffff;">
+                                <li><i class="fas fa-check-circle" style="color: #61CE70; margin-right: 10px;"></i>Azia</li>
+                                <li><i class="fas fa-check-circle" style="color: #61CE70; margin-right: 10px;"></i>Refluxo</li>
+                                <li><i class="fas fa-check-circle" style="color: #61CE70; margin-right: 10px;"></i>Má digestão</li>
+                                <li><i class="fas fa-check-circle" style="color: #61CE70; margin-right: 10px;"></i>Desconforto estomacal</li>
+                            </ul>
+                        </div>
+                        <div class="mt-2 mx-auto section-btn">
+                            <a href="#conheca-gotazil" class="cta-btn" style="display: inline-block; padding: 15px 30px; font-size: 1.5em; color: #ffffff; background-color: #085D63; border-radius: 5px; text-decoration: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); transition: background-color 0.3s, transform 0.3s;">
+                                <i class="fas fa-arrow-right" style="margin-right: 10px;"></i>Conheça o Gotazil
+                            </a>
+                        </div>
+                    </div>                
                 </div>
             </div>
         </div>
     </section>
+    
+    
 
-    <section class="container my-5 text-center">
-        <h2>Garantia de Satisfação</h2>
-        <p>Se você não sentir uma melhora significativa em 30 dias, devolvemos seu dinheiro.</p>
-        <a href="#comprar" class="cta-btn">Garanta Seu Desconto</a>
-    </section>
-
-    <footer class="footer text-center">
+    <section class="features text-center" style="background-color: #f8f9fa; padding: 10px 0;">
         <div class="container">
-            <p>&copy; 2024 Gotazil. Todos os direitos reservados.</p>
+            <div class="row">
+                <div class="col-md-4 d-flex align-items-stretch m-3 mx-auto">
+                    <div style="background-color: #085D63; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; flex-grow: 1;">
+                        <i class="fas fa-heart" style="font-size: 3em; color: #61CE70; margin-bottom: 15px;"></i>
+                        <h3 class="subtitle" style="color: #ffffff; font-weight: bold; font-size: 1.8em; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Alívio Eficaz</h3>
+                        <p style="color: #ffffff; font-size: 1.2em; margin-top: 10px;">Gotazil proporciona um alívio eficaz dos sintomas de azia e refluxo, melhorando sua qualidade de vida.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex align-items-stretch m-3 mx-auto">
+                    <div style="background-color: #085D63; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; flex-grow: 1;">
+                        <i class="fas fa-leaf" style="font-size: 3em; color: #61CE70; margin-bottom: 15px;"></i>
+                        <h3 class="subtitle" style="color: #ffffff; font-weight: bold; font-size: 1.8em; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">100% Natural</h3>
+                        <p style="color: #ffffff; font-size: 1.2em; margin-top: 10px;">Fórmula 100% natural aprovada pela ANVISA, segura e livre de efeitos colaterais.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 d-flex align-items-stretch m-3 mx-auto">
+                    <div style="background-color: #085D63; padding: 30px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: transform 0.3s; flex-grow: 1;">
+                        <i class="fas fa-shield-alt" style="font-size: 3em; color: #61CE70; margin-bottom: 15px;"></i>
+                        <h3 class="subtitle" style="color: #ffffff; font-weight: bold; font-size: 1.8em; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Garantia de Satisfação</h3>
+                        <p style="color: #ffffff; font-size: 1.2em; margin-top: 10px;">Se não estiver satisfeito em 30 dias, devolvemos seu dinheiro. Garantia total de satisfação.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container my-5">
+        <h2 class="title text-center" style="font-size: 2.5em; font-weight: bold; color: #00373A; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: 40px;">Resultados Comprovados</h2>
+        <div class="row">
+            <div class="col-md-4 m-2 mx-auto">
+                <div class="testimonial">
+                    <div class="row">
+                        <div class="col-10 mx-auto">
+                            <img src="senhor-com-gotazil-quadrado.jpeg" alt="Depoimento 1" class="img-fluid rounded mb-3">
+                        </div>
+                        <div class="col-10 mx-auto">
+                            <p><strong>Antônio Alencar, 61 anos</strong>: "Devido ao meu refluxo, tenho mau hálito constante, sempre tendo que disfarçar com balas e enxaguante bucal, comecei a tomar o Gotazil e não senti mais problemas de refluxo e consequentemente meu mau hálito foi embora!"</p>
+                        </div>
+                    </div>     
+                </div>
+            </div>
+            <div class="col-md-4 m-2 mx-auto">
+                <div class="testimonial">
+                    <div class="row">
+                        <div class="col-10 mx-auto">
+                            <img src="senhora-com-gotazil-quadrado.jpeg" alt="Depoimento 2" class="img-fluid rounded mb-3">
+                        </div>
+                        <div class="col-10 mx-auto">
+                            <p><strong>Cícero Andrade, 45 anos</strong>: "Sofro de refluxo há alguns anos, assumo que não cuido direito, pois não tenho tempo para ficar indo em médico e passando por toda aquela burocracia chata de consultório, estou usando o Gotazil há alguns dias e sinto uma melhora considerada! Obrigado."</p>
+                        </div>
+                    </div>     
+                </div>
+            </div>
+            <div class="col-md-4 m-2 mx-auto">
+                <div class="testimonial">
+                    <div class="row">
+                        <div class="col-10 mx-auto">
+                            <img src="jovemcomgotazil-quadrado.jpeg" alt="Depoimento 3" class="img-fluid rounded mb-3">
+                        </div>
+                        <div class="col-10 mx-auto">
+                            <p><strong>Juliana Silva, 30 anos</strong>: "Sempre tive problemas com azia, e nada parecia resolver. Depois que comecei a usar Gotazil, minha vida mudou. Estou muito satisfeita com os resultados e recomendo a todos."</p>
+                        </div>
+                    </div>     
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="benefits text-center" style="background-color: #f8f9fa; padding: 60px 0;">
+        <div class="container">
+            <h2 class="title text-center" style="font-size: 2.5em; font-weight: bold; color: #00373A; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: 40px;">Benefícios do Gotazil</h2>
+            <div class="row">
+                <div class="col-md-6 my-auto">
+                    <ul class="list-unstyled" style="font-size: 1.2em; line-height: 1.8; color: #085D63;">
+                        <li class="mb-3" style="display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #6EC1E4; margin-right: 10px;"></i> Alívio dos sintomas de azia e refluxo</li>
+                        <li class="mb-3" style="display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #6EC1E4; margin-right: 10px;"></i> Melhora da digestão e bem-estar geral</li>
+                        <li class="mb-3" style="display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #6EC1E4; margin-right: 10px;"></i> Ingredientes naturais e seguros</li>
+                        <li class="mb-3" style="display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #6EC1E4; margin-right: 10px;"></i> Aprovação da ANVISA</li>
+                        <li class="mb-3" style="display: flex; align-items: center;"><i class="fas fa-check-circle" style="color: #6EC1E4; margin-right: 10px;"></i> Garantia de satisfação ou seu dinheiro de volta</li>
+                    </ul>
+                </div>
+                <div class="col-md-6 d-flex justify-content-center">
+                    <img src="https://gotazil.com.br/wp-content/uploads/2023/09/CAPA2-min-1-1-482x1024.png" alt="Benefícios do Gotazil" class="img-fluid rounded" style="max-height: 400px; align-self: center; ">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <section class="guarantee text-center" style="background-color: #085D63; padding: 60px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <h2 class="title" style="font-size: 2.5em; font-weight: bold; color: #ffffff; text-shadow: 2px 2px 4px rgba(0,0,0,0.3); margin-bottom: 20px;">Garantia de Satisfação</h2>
+                </div>
+                <div class="col-6 col-md-3 mx-auto">
+<img src="https://gotazil.com.br/wp-content/uploads/2023/09/Sem-Titulo-1-1-1-1.png" alt="Garantia de Satisfação" class="img-fluid rounded mb-3" style="max-height: 400px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);">
+                </div>
+                <div class="col-10 col-md-8 mx-auto">
+                    <p class="subtitle" style="font-size: 1.5em; color: #ffffff; margin-bottom: 30px;">Se você não sentir uma melhora significativa em 30 dias, devolvemos seu dinheiro.</p>
+            
+            <a href="#saiba-mais" class="cta-btn" style="display: inline-block; padding: 15px 30px; font-size: 1.5em; color: #085D63; background-color: #ffffff; border-radius: 5px; text-decoration: none; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); transition: background-color 0.3s, transform 0.3s;">
+                <i class="fas fa-arrow-right" style="margin-right: 10px;"></i>Quero conhecer o Gotazil
+            </a>
+                </div>
+            </div>
+            
+            
+        </div>
+    </section>
+    
+
+    <footer class="footer">
+        <div class="container">
+            <div class="info-links">
+                <a href="#">Termos e Condições</a> |
+                <a href="#">Política de Privacidade</a> |
+                <a href="#">Política de Cookies</a> |
+                <a href="#">Disclaimer</a> |
+                <a href="#">Início</a> |
+                <a href="#">Contato</a>
+            </div>
         </div>
     </footer>
 
@@ -102,3 +453,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
